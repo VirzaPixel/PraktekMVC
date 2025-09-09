@@ -13,9 +13,11 @@ class UserController extends User{
     public function index() {
         if(isset($_GET['id'])) {
             $data = $this->user->getUserById($_GET['id']);
+            include "views/user_detail/detail.php";
         }
         else {
             $data = $this->user->getAllUsers();
+            include "views/user_all/users.php";
         }
     }
 }
